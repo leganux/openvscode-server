@@ -23,6 +23,11 @@ if (!isWeb) {
 		gitpodHost = gitpodHost && new URL(gitpodHost).host;
 	} catch { }
 }
+console.log("!!!!!-------------------", {
+	isWeb, GITPOD_CODE_HOST_env: process.env['GITPOD_CODE_HOST'],
+	env: process.env,
+	gitpodHost,
+})
 
 /**
  * Root from which resources in webviews are loaded.
