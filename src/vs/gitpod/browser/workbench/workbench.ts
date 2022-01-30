@@ -19,7 +19,7 @@ import { request } from 'vs/base/parts/request/browser/request';
 import { localize } from 'vs/nls';
 import product from 'vs/platform/product/common/product';
 import { isFolderToOpen, isWorkspaceToOpen } from 'vs/platform/windows/common/windows';
-import { commands, create, ICommand, ICredentialsProvider, ITunnel, ITunnelProvider, IURLCallbackProvider, IWorkbenchConstructionOptions, IWorkspace, IWorkspaceProvider } from 'vs/workbench/workbench.web.api';
+import { commands, create, ICommand, ICredentialsProvider, ITunnel, ITunnelProvider, IURLCallbackProvider, IWorkbenchConstructionOptions, IWorkspace, IWorkspaceProvider } from 'vs/workbench/workbench.web.main';
 import { defaultWebSocketFactory } from 'vs/platform/remote/browser/browserSocketFactory';
 import { RemoteAuthorityResolverError, RemoteAuthorityResolverErrorCode } from 'vs/platform/remote/common/remoteAuthorityResolver';
 import { extractLocalHostUriMetaDataForPortMapping, isLocalhost } from 'vs/platform/tunnel/common/tunnel';
@@ -865,7 +865,6 @@ async function doStart(): Promise<IDisposable> {
 	};
 
 	subscriptions.add(create(document.body, {
-		connectionToken: '00000',
 		remoteAuthority,
 		webviewEndpoint,
 		webSocketFactory: {
