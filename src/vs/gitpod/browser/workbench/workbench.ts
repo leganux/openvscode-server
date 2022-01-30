@@ -865,6 +865,7 @@ async function doStart(): Promise<IDisposable> {
 	};
 
 	subscriptions.add(create(document.body, {
+		connectionToken: '00000',
 		remoteAuthority,
 		webviewEndpoint,
 		webSocketFactory: {
